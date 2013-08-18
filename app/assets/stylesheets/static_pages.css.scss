@@ -1,0 +1,43 @@
+// Place all the styles related to the static_pages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.home-background{
+  background: url(home-back.png) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.home-text{
+	text-align: center;
+	margin: 50px 0px 30px 0px;
+	background: black;
+	color: white;
+	opacity: 0.7;
+	padding: 22px;
+	width: 60%;
+	font-family: 'Open Sans';
+	font-size: 43px;
+	line-height: 50px;
+	font-weight: bold;
+}
+
+.fb-login{
+	background: #3B5998;
+	padding: 15px 20px;
+	width: 200px;
+	opacity: 0.9;
+	color: white;
+	font-weight: bold;
+	font-family: 'Open Sans';
+	font-size: 17px;
+	text-align: center;
+	cursor: pointer;
+}
+
+.fb-login:hover{
+	background: #4E68A0;
+}

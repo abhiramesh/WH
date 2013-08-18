@@ -1,0 +1,14 @@
+<% content_for :head do %>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <%= stylesheet_link_tag "bootstrap-responsive.min.css" %>
+<% end %>
+<body class="home-background">
+	<div class="container-fluid" align="center">
+		<div class="home-text">
+			Find out who's in your classes.
+		</div>
+		<a href="<%=user_omniauth_authorize_path(:facebook)%>"><div class="fb-login">
+			Login with Facebook
+		</div></a>
+	</div>
+</body>
