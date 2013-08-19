@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  before_filter :authorize, :only => [:index, :edit, :new]
+
   # GET /users
   # GET /users.json
 
@@ -20,10 +22,24 @@ class UsersController < ApplicationController
           if email != ''
             user = User.create(email: email, name: name, provider: provider, uid: uid, oauth_token: oauth_token, oauth_expires_at: oauth_expires_at, password: SecureRandom.hex(10))
           end
+          sign_in_and_redirect(:user, user)
         end
+      else
+        redirect_to user_path(current_user)
       end
-      redirect_to root_path
     end
+  end
+
+  def create_search
+    if params["search"] != ""
+      current_user.find_classmates(params["search"])
+    else
+      redirect_to :back
+    end
+  end
+
+  def show_results
+    @results = Result.where(:query => params[:id], :user_id => current_user.id)
   end
 
   def index
@@ -39,10 +55,8 @@ class UsersController < ApplicationController
   # GET /users/1.json
   def show
     @user = User.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @user }
+    if current_user.id != @user.id
+      redirect_to root_path
     end
   end
 

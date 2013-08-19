@@ -21,6 +21,8 @@ gem 'koala'
 
 gem 'delayed_job_active_record'
 
+gem 'mechanize'
+
 
 # Gems used only for assets and not required
 # in production environments by default.

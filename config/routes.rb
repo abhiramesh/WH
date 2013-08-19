@@ -9,6 +9,9 @@ Wharton::Application.routes.draw do
 
   root :to => "static_pages#home"
 
+  match "create_search", :controller => :users, :action => :create_search, :as => "create_search"
+  get "/results/:id", :to => "users#show_results"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

@@ -1,5 +1,13 @@
-<p id="notice"><%= notice %></p>
-
-
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+<div class="container-fluid" align="center">
+	<div class="search-box">
+		Search for a Class
+		<br><br>
+		<%= form_tag create_search_path do |f| %>
+			<%= text_field_tag "search", nil, :placeholder => "ex: ANTH101002" %>
+			<div class="sub-text">
+				Please enter the course name and section number, no spaces.
+			</div>
+			<%= submit_tag "Search >>", :class => "submit" %>
+		<% end %>
+	</div>
+</div>

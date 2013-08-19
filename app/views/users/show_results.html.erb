@@ -1,0 +1,11 @@
+<div class="container-fluid" align="center">
+	<div class="row-fluid">
+		<% @results.each do |r| %>
+		<div class="span3">
+			<%= r.name %>
+			<br>
+			<img src="<%=r.image_url%>">
+		</div>
+		<% end %>
+	</div>
+</div>

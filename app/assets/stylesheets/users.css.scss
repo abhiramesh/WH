@@ -1,3 +1,51 @@
 // Place all the styles related to the Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.search-box{
+	width: 40%;
+	background: #EEEEEE;
+	color: #313131;
+	font-family: 'Open Sans';
+	font-weight: bold;
+	font-size: 25px;
+	padding: 30px;
+	line-height: 28px;
+	margin-top: 100px;
+}
+
+input{
+	height: 35px !important;
+	width: 100%;
+	max-width: 200px;
+	border-radius: 0px !important;
+}
+
+.sub-text{
+	color: #313131;
+	font-family: 'Open Sans';
+	font-weight: bold;
+	font-size: 15px;
+	line-height: 18px;
+	padding-bottom: 20px;
+}
+
+.submit{
+	background: #27AE60;
+	font-family: 'Open Sans';
+	padding: 12px 10px 30px 10px !important;
+	border-radius: 0px;
+	border: none;
+	box-shadow: none;
+	font-weight: bold;
+	width: 80% !important;
+	max-width: 190px;
+	font-size: 18px;
+	color: white;
+	cursor: pointer;
+}
+
+.submit:hover{
+	background: #2ECC71;
+}
