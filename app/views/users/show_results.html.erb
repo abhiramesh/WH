@@ -22,11 +22,11 @@
   </div>
 </header>
 
-<div class="container-fluid" align="center">
+<div class="container" align="center">
 		<% @results.each_slice(4) do |r| %>
-		<div class="row-fluid">
+		<div class="row">
 			<% r.each do |c| %>
-				<div class="span3">
+				<div class="col-lg-3">
 					<%= c.name %>
 					<br>
 					<img src="<%=c.image_url%>">
