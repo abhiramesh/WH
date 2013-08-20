@@ -1,3 +1,27 @@
+<% content_for :head do %>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+<% end %>
+<header class="navbar navbar-inverse navbar-fixed-top bs-docs-nav" role="banner">
+  <div class="container">
+    <nav role="navigation">
+      <ul class="nav navbar-nav">
+        <li>
+          <a href="/">Home</a>
+        </li>
+        <li class="active">
+          <a href="<%=user_path(current_user)%>">Search</a>
+        </li>
+        <li>
+          <a href="/view_classes">My Courses</a>
+        </li>
+        <li>
+          <a href="/logout">Logout</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
 <div class="container-fluid" align="center">
 	<div class="search-box">
 		Search for a Class
@@ -8,6 +32,9 @@
 				Please enter the course name and section number, no spaces.
 			</div>
 			<%= submit_tag "Search >>", :class => "submit" %>
+			<div class="sub-sub-text">
+				The search might take a few seconds, so sit back, relax, and don't keep clicking on the search button like a maniac!
+			</div>
 		<% end %>
 	</div>
 </div>

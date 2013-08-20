@@ -4,7 +4,8 @@
 
 
 .search-box{
-	width: 40%;
+	width: 100%;
+	max-width: 650px;
 	background: #EEEEEE;
 	color: #313131;
 	font-family: 'Open Sans';
@@ -31,10 +32,20 @@ input{
 	padding-bottom: 20px;
 }
 
+.sub-sub-text{
+	color: #313131;
+	font-family: 'Open Sans';
+	font-weight: normal;
+	font-style: italic;
+	padding: 20px 0px 0px 0px;
+	font-size: 15px;
+	line-height: 18px;
+}
+
 .submit{
 	background: #27AE60;
 	font-family: 'Open Sans';
-	padding: 12px 10px 30px 10px !important;
+	padding: 0px !important;
 	border-radius: 0px;
 	border: none;
 	box-shadow: none;
@@ -48,4 +59,23 @@ input{
 
 .submit:hover{
 	background: #2ECC71;
+}
+
+.class-box{
+	background: #F6F6F6;
+	box-shadow: 0px 0px 2px #CCC;
+	text-align: center;
+	width: 90%;
+	max-width: 400px;
+	padding: 80px 20px;
+	color: #313131;
+	font-size: 15px;
+	font-weight: bold;
+	margin-bottom: 25px;
+}
+
+.class-box:hover{
+	background: #EEEEEE;
+	cursor: pointer;
+	box-shadow: 0px 0px 5px #CCC;
 }

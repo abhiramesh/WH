@@ -1,14 +1,19 @@
-@import "bootstrap";
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:300);
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:400);
 @import url(https://fonts.googleapis.com/css?family=Oswald);
 
 body {
   background-color: #fff;
-  color: #333;
-  font-family: verdana, arial, helvetica, sans-serif;
+  color: #313131;
+  font-family: 'Open Sans', sans-serif;
   font-size: 13px;
   line-height: 18px;
+  padding-top: 100px;
+}
+
+ul.navbar-nav{
+  margin-top: 5px !important;
+  left: 10% !important;
 }
 
 p, ol, ul, td {

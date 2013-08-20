@@ -11,6 +11,7 @@ Wharton::Application.routes.draw do
 
   match "create_search", :controller => :users, :action => :create_search, :as => "create_search"
   get "/results/:id", :to => "users#show_results"
+  get "/view_classes/", :to => "users#view_classes"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

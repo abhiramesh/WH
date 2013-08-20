@@ -11,7 +11,7 @@
         <li>
           <a href="<%=user_path(current_user)%>">Search</a>
         </li>
-        <li>
+        <li class="active">
           <a href="/view_classes">My Courses</a>
         </li>
         <li>
@@ -23,15 +23,13 @@
 </header>
 
 <div class="container-fluid" align="center">
-		<% @results.each_slice(4) do |r| %>
-		<div class="row-fluid">
-			<% r.each do |c| %>
-				<div class="span3">
-					<%= c.name %>
-					<br>
-					<img src="<%=c.image_url%>">
-				</div>
-			<% end %>
-		</div>
-		<% end %>
+    <% @classes.each do |c| %>
+      <div class="row-fluid" align="center">
+        <a href="/results/<%=c%>">
+          <div class="class-box">
+            <%= c %>
+          </div>
+        </a>
+      </div>
+    <% end %>
 </div>

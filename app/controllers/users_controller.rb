@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_filter :authorize, :only => [:index, :edit, :new]
+  before_filter :signed_in, :only => [:create_search, :show_results, :view_classes]
 
   # GET /users
   # GET /users.json
@@ -33,6 +34,7 @@ class UsersController < ApplicationController
   def create_search
     if params["search"] != ""
       current_user.find_classmates(params["search"])
+      redirect_to '/results/' + params["search"]
     else
       redirect_to :back
     end
@@ -40,6 +42,15 @@ class UsersController < ApplicationController
 
   def show_results
     @results = Result.where(:query => params[:id], :user_id => current_user.id)
+  end
+
+  def view_classes
+    @results = current_user.results
+    @classes = []
+    @results.each do |r|
+      @classes << r.query
+    end
+    @classes = @classes.uniq!
   end
 
   def index
