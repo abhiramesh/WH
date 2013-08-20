@@ -33,8 +33,12 @@ class UsersController < ApplicationController
 
   def create_search
     if params["search"] != ""
-      current_user.find_classmates(params["search"])
-      redirect_to '/results/' + params["search"]
+      if Result.find_by_query(params["search"]) == nil
+        current_user.find_classmates(params["search"])
+        redirect_to '/results/' + params["search"]
+      else
+        redirect_to '/results/' + params["search"]
+      end
     else
       redirect_to :back
     end
