@@ -10,7 +10,8 @@ class User < ActiveRecord::Base
   has_many :results
 
   def find_classmates(search)
-  	  a = Mechanize.new 
+    Timeout::timeout(13) do
+      a = Mechanize.new 
       a.follow_meta_refresh = true
 
       email = 'aramesh@wharton.upenn.edu'
@@ -61,6 +62,11 @@ class User < ActiveRecord::Base
       a.page.parser.css("div.box.profileresult").each do |c|
         Result.create(user_id: self.id, name: c.css("p.single a").text, image_url: c.css("img.avatar.medium")[0]["src"], query: search)
       end
+    end
+    rescue Timeout::Error
+      print("TIMEOUT")
+    ensure
+    puts
   end
 
 

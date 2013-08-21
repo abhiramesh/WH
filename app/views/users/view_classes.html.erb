@@ -23,6 +23,7 @@
 </header>
 
 <div class="container-fluid" align="center">
+  <% if @classes != [] %>
     <% @classes.each do |c| %>
       <div class="row-fluid" align="center">
         <a href="/results/<%=c%>">
@@ -32,4 +33,9 @@
         </a>
       </div>
     <% end %>
+  <% else %>
+    <div class="sub-text">
+        Silly you  - you haven't searched for any classes. Click search on the menu bar!
+    </div>
+  <% end %>
 </div>

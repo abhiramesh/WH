@@ -23,6 +23,7 @@
 </header>
 
 <div class="container" align="center">
+  <% if @results != [] %>
 		<% @results.each_slice(4) do |r| %>
 		<div class="row">
 			<% r.each do |c| %>
@@ -34,4 +35,9 @@
 			<% end %>
 		</div>
 		<% end %>
+  <% else %>
+    <div class="sub-text">
+      Something went wrong! Either your course name was incorrect or the search took too long. Feel free to try again!
+    </div>
+  <% end %>
 </div>
