@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_filter :authorize, :only => [:index, :edit, :new]
-  before_filter :signed_in, :only => [:create_search, :show_results, :view_classes]
+  before_filter :signed_in, :only => [:create_search, :show_results, :view_classes, :show]
 
   # GET /users
   # GET /users.json
