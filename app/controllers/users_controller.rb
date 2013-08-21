@@ -51,8 +51,10 @@ class UsersController < ApplicationController
   def view_classes
     @results = current_user.results
     @classes = []
-    @results.each do |r|
-      @classes << r.query
+    if @results
+      @results.each do |r|
+        @classes << r.query
+      end
     end
     @classes = @classes.uniq!
   end
