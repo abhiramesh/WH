@@ -38,11 +38,11 @@ class User < ActiveRecord::Base
 
       a.post(url, params, headers)
 
-      #if search.include? "cis" || search.include? "ese" || search.include? "cbe" || search.include? "eas"
-       # section_id = search[0..2] + '%20' + search[3..8]
-      #else
+      if ['cis','ese','cbe', 'eas'].any? { |eng| search.include?(eng) }
+        section_id = search[0..2] + '%20' + search[3..8]
+      else
         section_id = search
-      #end
+      end
 
       url_2 = "https://spike.wharton.upenn.edu/courses/index.cfm?method=class_list&term=2013C&section_id=" + section_id
 
