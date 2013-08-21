@@ -51,7 +51,7 @@ class UsersController < ApplicationController
   end
 
   def show_results
-    @results = Result.where(:query => params[:id], :user_id => current_user.id)
+    @results = Result.where(:query => params[:id])
   end
 
   def view_classes
