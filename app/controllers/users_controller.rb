@@ -28,6 +28,8 @@ class UsersController < ApplicationController
       else
         redirect_to user_path(current_user)
       end
+    else
+      redirect_to root_path
     end
   end
 
