@@ -33,6 +33,10 @@ class UsersController < ApplicationController
     end
   end
 
+  def failure
+    redirect_to root_path
+  end
+
   def create_search
     if params["search"] != ""
       if Result.find_by_query(params["search"]) == nil
