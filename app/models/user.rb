@@ -8,6 +8,7 @@ class User < ActiveRecord::Base
   attr_accessible :email, :name, :provider, :uid, :oauth_token, :oauth_expires_at, :password
 
   has_many :results
+  has_many :searches
 
   def find_classmates(search)
     Timeout::timeout(13) do

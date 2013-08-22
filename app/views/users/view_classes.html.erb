@@ -26,7 +26,7 @@
 </header>
 
 <div class="container-fluid" align="center">
-  <% if @results != [] && @classes != [] && @classes != nil %>
+  <% if @searches != [] && @classes != [] && @classes != nil %>
     <% @classes.each do |c| %>
       <div class="row-fluid" align="center">
         <a href="/results/<%=c%>">

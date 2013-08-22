@@ -39,6 +39,7 @@ class UsersController < ApplicationController
 
   def create_search
     if params["search"] != ""
+      Search.create(:user_id => current_user.id, :query => params["search"])
       if Result.find_by_query(params["search"]) == nil
         current_user.find_classmates(params["search"])
         redirect_to '/results/' + params["search"]
@@ -55,11 +56,11 @@ class UsersController < ApplicationController
   end
 
   def view_classes
-    @results = current_user.results
+    @searches = current_user.searches
     @classes = []
-    if @results
-      @results.each do |r|
-        @classes << r.query
+    if @searches
+      @searches.each do |s|
+        @classes << s.query
       end
     end
     @classes = @classes.uniq!
