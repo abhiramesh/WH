@@ -63,7 +63,7 @@ class UsersController < ApplicationController
         @classes << s.query
       end
     end
-    @classes = @classes.uniq!
+    @classes = @classes.uniq
   end
 
   def index
