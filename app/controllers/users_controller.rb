@@ -18,12 +18,12 @@ class UsersController < ApplicationController
       if !user_signed_in?
         user = User.find_by_uid(uid)
         if user
-          sign_in_and_redirect(:user, user)
+          sign_in_and_redirect(user)
         else
           if email != ''
             user = User.create(email: email, name: name, provider: provider, uid: uid, oauth_token: oauth_token, oauth_expires_at: oauth_expires_at, password: SecureRandom.hex(10))
           end
-          sign_in_and_redirect(:user, user)
+          sign_in_and_redirect(user)
         end
       else
         redirect_to user_path(current_user)
@@ -38,7 +38,7 @@ class UsersController < ApplicationController
   end
 
   def create_search
-    if params["search"] != ""
+    if params["search"] != "" && params["search"] != nil
       Search.create(:user_id => current_user.id, :query => params["search"])
       if Result.find_by_query(params["search"]) == nil
         current_user.find_classmates(params["search"])
