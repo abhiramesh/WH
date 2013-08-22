@@ -47,7 +47,7 @@ class UsersController < ApplicationController
         redirect_to '/results/' + params["search"]
       end
     else
-      redirect_to :back
+      redirect_to user_path(current_user)
     end
   end
 
