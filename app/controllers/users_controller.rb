@@ -22,8 +22,8 @@ class UsersController < ApplicationController
         else
           if email != ''
             user = User.create(email: email, name: name, provider: provider, uid: uid, oauth_token: oauth_token, oauth_expires_at: oauth_expires_at, password: SecureRandom.hex(10))
+            sign_in_and_redirect(user)
           end
-          sign_in_and_redirect(user)
         end
       else
         redirect_to user_path(current_user)
