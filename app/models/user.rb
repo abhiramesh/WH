@@ -15,12 +15,12 @@ class User < ActiveRecord::Base
       a = Mechanize.new 
       a.follow_meta_refresh = true
 
-      email = 'aramesh@wharton.upenn.edu'
-      password = 'AbhiR2212'
+      email = ''
+      password = ''
 
       url = "https://spike.wharton.upenn.edu/index.cfm?login=true"
 
-      params = 'username=aramesh&password=AbhiR2212&submit=Log+in'
+      params = ''
 
       headers = {
         'Accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
